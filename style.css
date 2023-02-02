@@ -1,0 +1,98 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    background-color: beige;
+}
+
+.cv,
+.image,
+.text,
+.movies,
+.awards,
+.contact {
+    margin: 10px;
+    padding: 10px;
+}
+
+img {
+    width: 100%;
+    max-width: fit-content;
+}
+
+body {
+    display: grid;
+    grid-template-areas:
+        "cv"
+        "flex-container"
+        "merits"
+        "contact";
+
+    text-align: center;
+    padding-left: 40px;
+    padding-right: 40px;
+}
+
+.flex-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    grid-area: flex-container;
+}
+
+.merits {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    grid-area: merits;
+
+    text-align: left;
+}
+
+.cv {
+    grid-area: cv;
+}
+
+.contact {
+    grid-area: contact;
+}
+
+.image {
+    justify-content: center;
+    flex: 1;
+}
+
+.text {
+    flex: 3;
+}
+
+.movies {
+    flex: 2;
+}
+
+.awards {
+    flex: 2;
+}
+
+li {
+    margin: 1em;
+}
+
+.cv,
+.flex-container,
+.merits {
+    border-bottom: 2px solid burlywood;
+}
+
+@media (max-width: 750px) {
+    body {
+        display: grid;
+        grid-template-columns: 1fr auto;
+    }
+
+    .flex-container,
+    .merits {
+        flex-direction: column;
+        text-align: center;
+    }
+}
